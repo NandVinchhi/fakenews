@@ -3,7 +3,6 @@ import model
 from model import get_headlines
 
 app = Flask(__name__)
-server = app.server
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
