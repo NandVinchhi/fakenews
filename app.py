@@ -43,4 +43,5 @@ def trends():
                         num_real = model.get_data("REAL"), 
                         num_clickbait = model.get_data("CLICKBAIT"), num_notclickbait = model.get_data("NOT CLICKBAIT"))
  
-app.run()
+if __name__ == "__main__": 
+  app.run() 
