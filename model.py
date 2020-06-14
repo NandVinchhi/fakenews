@@ -59,6 +59,7 @@ def predict(url):
     if compare(article.title.split(), article.keywords) == "NOT CLICKBAIT" and is_clickbait(article.title) == 0:
       kk = "NOT CLICKBAIT"
     else:
+		
       kk = "CLICKBAIT"
     
     
@@ -66,6 +67,8 @@ def predict(url):
   except ValueError:
     return (["INVALID"] * 4)
   finally:
+    if len(article.text) <= 500:
+      return [str(article.title)] + (["INVALID"] * 3)
     return [str(article.title), predict_fake(str(article.title), str(article.text)), kk, str(article.summary)] 
 
 
