@@ -1,1 +1,22 @@
-# fakenews
+# FakeNewsIfy
+
+### Inspiration
+There is a lot happening in our world right now and it's taken social media by storm. Being an avid user of social media and constantly chatting with friends, we all noticed the abundance of news related conversations floating around with a lot of confusion and arguments going on. We thought it would be ideal during this time to make an all in one product for users to go to, for a quick summary and evaluation of any possible news article.
+
+### What it does
+Our app has a few main sections. Our home page is where most of the magic happens. We allow users on this page to enter the URL of any news article they choose and upon hitting submit it's run through our machine learning algorithms and news API, which allows us to display the title and a brief summary of the article. We're also able to use comparison functions with NLTK to decipher whether or not the article was registered as click bait. The most important feature however is instant results on whether or not the article is fake or real. Our next page is just an about page summarizing the apps features and function. The third page is a live feed page which takes articles from the newsapi and puts them all in this one page labeled with a title, URL, image, and values of being fake/real and click bait/non click bait content. This is great for users to brush up on some news or get an idea of what news sources to be trusting more often. Our fourth page is called the trends page which is our favorite. This page uses googles chart drawing feature in JavaScript as well as a MongoDB connection to take results from our end users URL submissions and append them to our database and display in 3D charts the number of real articles compared to fake, and the number of click bait articles compared to non click bait.
+
+### How we built it
+We built the back-end infrastructure of our app with Flask, this allows us to do multi-page rendering as well as parsing variables and values to HTML templates and write Python within these templates. We're using NLTK, Scikit-Learn, Pandas, and Numpy to compile data and create our machine learning models. We're using the newsapi to collect data from news articles being updated constantly. We're then using a MongoDB database along with Googles chart drawing features to create nice graphics to provide visuals on these different news article statistics. The Machine learning models we used were Multinomial Naive Bayes, paired with an nltk keyword extractor for click-bait classification, and Passive Aggressive Classifier for fake news detection. Our project was hosted online via heroku.
+
+### Challenges we ran into
+Some challenges we ran into definitely had to be during compiling of the model. It was difficult to parse the correct values and create the right output to where they were providing accurate results. We also ran into issues with our live feed page in which sometimes articles weren't being registered properly or the API would bring in a spam article and it would cause the whole app to crash. We combated these issues by enhancing our code and using some error catching statements and a lot of debugging to catch the specific problems. Getting the NLTK library to work with the heroku app was also a significant challenge.
+
+### Accomplishments that we're proud of
+We're definitely proud of the fact that the model and web interface is completely synced up and working. We can now give this website to our friends and the general public and have them test their sources and find the best places to read their news from. We're also super proud of our integration of MongoDB with Googles drawing charts feature so we can visually represent our data. Hosting was also quite difficult with our machine learning models so we're proud of that.
+
+### What we learned
+We learned a lot about using MongoDB with Google and Python in general. We found Atlas incredible for visually seeing what data we could work with and create schemas for. It was an incredible experience. We also learned a lot about API calls especially with Python and taking the data into a web framework like Flask and displaying it beautifully with HTML and CSS.
+
+### What's next for FakeNewsify News Credibility Checker
+We're planning on adding new features such as forums for users to interact with others. We also want to add another graph to our trends page in which we rank sources of news so it's completely clear of who comes out with the best news and who's not as trusted in the community. We'd also like to improve some of the responsiveness of the web app as we didn't have enough time to completely make sure that all aspects were proportional for any user device.
